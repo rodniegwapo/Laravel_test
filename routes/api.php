@@ -20,7 +20,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::get('years', [App\Http\Controllers\YearController::class, 'index']);
 Route::get('years/{year}/makes', [App\Http\Controllers\MakeController::class, 'getMakesByYear']);
-Route::get('years/{year}/makes/{make}/model', [App\Http\Controllers\CarModelController::class, 'getModelsMakeByYear'])->scopeBindings();
+Route::get('years/{year}/makes/{make}/car-models', [App\Http\Controllers\CarModelController::class, 'getModelsMakeByYear'])->scopeBindings();
 Route::get('years/{year}/makes/{make}/car-models/{carModel}/types', [App\Http\Controllers\TypeController::class, 'getTypeModelMakeByYear'])->scopeBindings();
 
 Route::apiResource('cars', App\Http\Controllers\CarController::class);
